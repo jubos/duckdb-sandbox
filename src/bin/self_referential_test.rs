@@ -11,13 +11,6 @@ fn create_tables(conn: &Connection) -> Result<()> {
         cycle_id INTEGER REFERENCES self_referential(id))
       ",
     )?;
-    // conn.execute_batch(
-    //     r"
-    //     CREATE TABLE self_referential (
-    //     id INTEGER PRIMARY KEY NOT NULL,
-    //     created_at TIMESTAMPTZ NOT NULL)
-    //   ",
-    // )?;
     Ok(())
 }
 
